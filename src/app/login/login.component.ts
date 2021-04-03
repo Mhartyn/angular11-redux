@@ -28,18 +28,7 @@ export class LoginComponent implements OnInit {
       this.recuerdame = true;
     }
   }
-
-  /* attachSingin(element){
-    this.auth2.attachClickHandler(element, {}, googleUser => { */
-      //let profile = googleUser.getBasicProfile();
-      //console.log(profile);
-      /* const token = googleUser.getAuthResponse().id_token;
-      this.usuarioService.loginGoogle(token).subscribe(
-        r => window.location.href = '#/dashboard' */ /* this.router.navigate(['/dashboard']) */
-      /* );
-    });
-  } */
-
+  
   ingresar(forma: NgForm){
     if (forma.invalid) {
       return;
@@ -51,7 +40,7 @@ export class LoginComponent implements OnInit {
       forma.value.password
     ); 
 
-    this.usuarioService.login(usuario, forma.value.recuerdame).subscribe(() => this.router.navigate(['/dashboard']));
+    this.usuarioService.login(usuario, forma.value.recuerdame).subscribe(() => this.router.navigate(['/home']));
   } 
 
 }

@@ -1,37 +1,40 @@
-<!-- ============================================================== -->
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<aside class="left-sidebar">
-    <!-- Sidebar scroll-->
-    <div class="scroll-sidebar">
-        <!-- Sidebar navigation-->
-        <nav class="sidebar-nav">
-            <ul id="sidebarnav">
-                <li class="user-profile">
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img [src]="usuario.img | imagen" alt="user" /><span class="hide-menu">{{usuario.nombre}} </span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a routerLinkActive="active" [routerLink]="['/perfil']">Perfil </a></li>
-                        <li><a href="javascript:void()">My Balance</a></li>
-                        <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a routerLinkActive="active" [routerLink]="['/account-setting']">Account Setting</a></li>
-                        <li><a class="pointer" (click)="logOut()">Logout</a></li>
-                    </ul>
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="index.html">
+                <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
+                <img class="img-fluid logo-thumb" src="assets/images/logo-thumb.png" alt="Theme-Logo" />
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+        </div>
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Getting started</label>
                 </li>
-                <li class="nav-devider"></li>
-                <li class="nav-small-cap">PERSONAL</li>
-                <li *ngFor="let item of menu">
-                    <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i [class]="item.icono"></i><span class="hide-menu">{{item.titulo}} <span class="label label-rouded label-themecolor pull-right">{{item.submenu.length}}</span></span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li *ngFor="let submenu of item.submenu">
-                            <a routerLinkActive="active" [routerLink]="[submenu.url]">{{submenu.titulo}} </a></li>
-                    </ul>
+                <li class="nav-item"><a href="#home" class="nav-link active"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Datta Able</span></a></li>
+                <li class="nav-item"><a href="#installation" class="nav-link"><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Installation</span></a></li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Structure</label>
                 </li>
+                <li class="nav-item"><a href="#filestruct" class="nav-link"><span class="pcoded-micon"><i class="far fa-folder-open"></i></span><span class="pcoded-mtext">File Structure</span></a></li>
+                <li class="nav-item"><a href="#pagestruct" class="nav-link"><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Page Structure</span></a></li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>layouts</label>
+                </li>
+                <li class="nav-item"><a href="#layouts" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Layout</span></a></li>
+                <li class="nav-item"><a href="#config-option" class="nav-link"><span class="pcoded-micon"><i class="feather icon-scissors"></i></span><span class="pcoded-mtext">Customizer Options</span></a></li>
+                <li class="nav-item"><a href="#menucust" class="nav-link"><span class="pcoded-micon"><i class="feather icon-scissors"></i></span><span class="pcoded-mtext">Theme Customizer</span></a></li>
+                <li class="nav-item"><a href="#scss" class="nav-link"><span class="pcoded-micon"><i class="fab fa-sass"></i></span><span class="pcoded-mtext">Scss variables</span></a></li>
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Resources</label>
+                </li>
+                <li class="nav-item"><a href="#plugins" class="nav-link"><span class="pcoded-micon"><i class="fas fa-plug"></i></span><span class="pcoded-mtext">Plugins</span></a></li>
+                <li class="nav-item"><a href="#faq" class="nav-link"><span class="pcoded-micon"><i class="feather icon-help-circle"></i></span><span class="pcoded-mtext">FAQ</span></a></li>
+                <li class="nav-item"><a href="#cl" class="nav-link"><span class="pcoded-micon"><i class="feather icon-book"></i></span><span class="pcoded-mtext">Change Log</span></a></li>
             </ul>
-        </nav>
-        <!-- End Sidebar navigation -->
+        </div>
     </div>
-    <!-- End Sidebar scroll-->
-</aside>
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
+</nav>
+<!-- [ navigation menu ] end -->

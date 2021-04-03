@@ -1,11 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { GraficasComponent } from './graficas/graficas.component';
+import { HomeComponent } from './home/home.component';
 //import { /* LoginGuard, */ AdminGuard } from 'src/app/service/service.index';
 
 const pagesRouters: Routes = [
     //{path: '', component: PagesComponent, canActivate: [LoginGuard], children: [
-        //{path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+        {path: 'home', component: HomeComponent, data: { titulo: 'Home' } },
         //{path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' }},
         {path: 'graficas', component: GraficasComponent, data: { titulo: 'Graficas' }},
         //{path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
@@ -14,7 +15,7 @@ const pagesRouters: Routes = [
         //{path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil' } },
         //mantenimientos
         //{path: 'usuarios', component: UsuarioComponent, canActivate: [AdminGuard], data: { titulo: 'Mantenimiento de Usuarios' } },
-        {path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+        {path: '', redirectTo: '/home', pathMatch: 'full' },
     //] }
 ];
 

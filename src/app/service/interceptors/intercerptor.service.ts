@@ -23,14 +23,14 @@ export class IntercerptorService implements HttpInterceptor {
     );
   }
 
-  handleError(error) {
+  handleError(error: Error) {
     let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
+    if (error instanceof ErrorEvent) {
         // client-side error
         errorMessage = `Error: ${error.error.message}`;
     } else {
         // server-side error
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        errorMessage = `Error Code: ${error.name}\nMessage: ${error.message}`;
     }
     console.log('throwError', errorMessage);
     return throwError(error);
