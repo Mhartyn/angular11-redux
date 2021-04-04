@@ -11,7 +11,7 @@ import { PagesModule } from './pages/pages.module';
 const appRouter: Routes = [
     {path: 'login', component: LoginComponent },
     //{path: 'register', component: RegisterComponent },
-    {path: '', component: PagesComponent, canActivate: [LoginGuard, VerificaTokenGuard], 
+    {path: '', component: PagesComponent, canActivate: [LoginGuard /*, VerificaTokenGuard*/],
     loadChildren: './pages/pages.module#PagesModule'},
     {path: '**', component: NopagefoundComponent }
 ];

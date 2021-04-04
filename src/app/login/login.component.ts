@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       forma.value.password
     ); 
 
-    this.usuarioService.login(usuario, forma.value.recuerdame).subscribe(() => this.router.navigate(['/home']));
+    this.usuarioService.login(usuario, forma.value.recuerdame).subscribe(() => this.router.navigate(['home']));
   } 
 
 }

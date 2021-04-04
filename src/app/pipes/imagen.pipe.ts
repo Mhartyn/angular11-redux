@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import enumServicio from 'src/app/config/enumServicio';
+import { environment } from 'src/environments/environment';
 import enumImagenes from '../config/enumImagenes';
 
 @Pipe({
@@ -8,7 +9,7 @@ import enumImagenes from '../config/enumImagenes';
 export class ImagenPipe implements PipeTransform {
 
   transform(img: string, tipo: enumImagenes = enumImagenes.usuario): unknown {
-    let url = `${enumServicio.url_services}/${enumServicio.url_services_descarga_archivo}`;
+    let url = `${environment.url_services}/${enumServicio.url_services_descarga_archivo}`;
 
     if (!img) {
       img = '';

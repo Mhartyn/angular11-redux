@@ -6,8 +6,7 @@ import { map } from 'rxjs/operators';
 import Usuario from '../../models/usuario.model';
 import enumServicio from '../../config/enumServicio';
 import enumStorage from '../../config/enumStorage';
-
-
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +33,7 @@ export class UsuarioService {
     this.usuario = new Usuario();
     this.menu = [];
 
-    if (localStorage.getItem(enumStorage.token) != null) {
+    if (localStorage.getItem(enumStorage.token)) {
       this.token = <string>localStorage.getItem(enumStorage.token);
       this.usuario = JSON.parse(<string>localStorage.getItem(enumStorage.usuario));
       this.menu = JSON.parse(<string>localStorage.getItem(enumStorage.menu));
@@ -42,7 +41,7 @@ export class UsuarioService {
   }
 
   private guardarStorage(resp: any){
-    const {respuesta: usuario, token, menu} = resp;
+    const { user: usuario, tokenReturn: token /*, menu*/} = resp;
 
     if (!usuario) {
       return;
@@ -50,10 +49,10 @@ export class UsuarioService {
 
     localStorage.setItem(enumStorage.token, token);
     localStorage.setItem(enumStorage.usuario, JSON.stringify(usuario));
-    if (resp.menu) {
+    /* if (resp.menu) {
       localStorage.setItem(enumStorage.menu, JSON.stringify(menu));
       this.menu = menu;
-    }
+    } */
 
     this.usuario = usuario;
     this.token = token;
@@ -88,22 +87,10 @@ export class UsuarioService {
     localStorage.removeItem(enumStorage.menu);
 
     this.router.navigate(['/login']);
-  }
-
-  public loginGoogle(token: string){
-    const url = `${enumServicio.url_services}/${enumServicio.url_services_googleLogin}`;
-
-    return this.http.post(url, {token})
-              .pipe(
-                map((resp: any) => {
-                  this.guardarStorage(resp);
-                  return true;
-                })
-                );
-  }
+  }  
 
   public login(usuario: Usuario, recuerdame: boolean = false){
-      const url = `${enumServicio.url_services}/${enumServicio.url_services_login}`;
+      const url = `${environment.url_services}/${enumServicio.url_services_login}`;
 
       if (recuerdame) {
           localStorage.setItem(enumStorage.email, usuario.email);
@@ -116,13 +103,14 @@ export class UsuarioService {
                       .pipe(
                         map((resp: any) => {
                           this.guardarStorage(resp);
+                          console.log(resp);
                           return true;
                         })
                       );                    
   }
 
   public crearUsuario(usuario: Usuario){
-    const url = `${enumServicio.url_services}/${enumServicio.url_services_usuario}`;
+    const url = `${environment.url_services}/${enumServicio.url_services_usuario}`;
 
     return this.http.post(url, usuario)
               .pipe(
@@ -134,7 +122,7 @@ export class UsuarioService {
   }
 
   public actualizarUsuario(usuario: Usuario){
-    const url = `${enumServicio.url_services}/${enumServicio.url_services_usuario}/${usuario._id}`;
+    const url = `${environment.url_services}/${enumServicio.url_services_usuario}/${usuario._id}`;
 
     return this.http.put(url, usuario)
     .pipe(
@@ -147,7 +135,7 @@ export class UsuarioService {
   }
 
   public consultaUsuarios( nombre: string, pagina: number = 1, tamanio: number = 5, orden: string = 'nombre', direccion: number = 1){
-    const url = `${enumServicio.url_services}/${enumServicio.url_services_usuario}s/${nombre}`;
+    const url = `${environment.url_services}/${enumServicio.url_services_usuario}s/${nombre}`;
 
     let params: HttpParams = new HttpParams()
                 .set('pagina', pagina.toString())
@@ -164,7 +152,7 @@ export class UsuarioService {
   }
 
   public borrarUsuario(id: string){
-    const url = `${enumServicio.url_services}/${enumServicio.url_services_usuario}/logico/${id}`;
+    const url = `${environment.url_services}/${enumServicio.url_services_usuario}/logico/${id}`;
     return this.http.delete(url)
               .pipe(
                 map((resp: any) => {

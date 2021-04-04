@@ -10,6 +10,7 @@ import { PipeModule } from '../pipes/pipe.module';
 //import { ProgressComponent } from './progress/progress.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { HomeComponent } from './home/home.component';
+import { AccionpopularComponent } from './accionpopular/accionpopular.component';
 //import { AccountSettingComponent } from './account-setting/account-setting.component';
 //import { GraficaDonaComponent } from '../component/grafica-dona/grafica-dona.component';
 //import { PromesasComponent } from './promesas/promesas.component';
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
         //ProgressComponent,
         GraficasComponent,
         HomeComponent,
+        AccionpopularComponent,
         //IncrementadorComponent,
         //GraficaDonaComponent,
         //AccountSettingComponent,
