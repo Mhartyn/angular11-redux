@@ -1,5 +1,5 @@
 enum enumServicio {
-    header_seguridad_services = 'auth',
+    header_seguridad_services = 'token',
     url_services_sube_archivo = 'sube',
     url_services_descarga_archivo = 'descarga',
     url_services_usuario = 'usuario',

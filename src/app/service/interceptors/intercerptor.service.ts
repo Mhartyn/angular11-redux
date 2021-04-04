@@ -14,7 +14,7 @@ export class IntercerptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const headers: HttpHeaders = new HttpHeaders().set(enumServicio.header_seguridad_services, this.usuarioService.token);
-
+    
     const reqClone = req.clone({
       headers
     });

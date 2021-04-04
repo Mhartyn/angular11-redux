@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { PAGES_ROUTES } from './pages.routers';
 import { SharedModule } from '../shared/shared.module';
-//import { ChartsModule } from 'ng2-charts';
 
 import { PipeModule } from '../pipes/pipe.module';
 //import { ProgressComponent } from './progress/progress.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { HomeComponent } from './home/home.component';
 import { AccionpopularComponent } from './accionpopular/accionpopular.component';
+import { CantidadtwitterComponent } from '../componentes/cantidadtwitter/cantidadtwitter.component';
 //import { AccountSettingComponent } from './account-setting/account-setting.component';
 //import { GraficaDonaComponent } from '../component/grafica-dona/grafica-dona.component';
 //import { PromesasComponent } from './promesas/promesas.component';
@@ -25,6 +25,7 @@ import { AccionpopularComponent } from './accionpopular/accionpopular.component'
         GraficasComponent,
         HomeComponent,
         AccionpopularComponent,
+        CantidadtwitterComponent,
         //IncrementadorComponent,
         //GraficaDonaComponent,
         //AccountSettingComponent,
@@ -37,6 +38,7 @@ import { AccionpopularComponent } from './accionpopular/accionpopular.component'
         //ProgressComponent,
         GraficasComponent,
         HomeComponent,
+        CantidadtwitterComponent,
         //IncrementadorComponent,
         //GraficaDonaComponent,
         //AccountSettingComponent,
@@ -50,7 +52,6 @@ import { AccionpopularComponent } from './accionpopular/accionpopular.component'
         CommonModule,
         SharedModule,
         FormsModule,
-        //ChartsModule,
         PipeModule
     ]
 })

@@ -27,7 +27,7 @@ import { environment } from 'src/environments/environment';
   declarations: [
     AppComponent,
     LoginComponent,
-    PagesComponent
+    PagesComponent,
   ],
   imports: [
     BrowserModule,

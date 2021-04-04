@@ -1,16 +1,21 @@
 <div class="card">
     <div class="card-header">
         <div class="card-header-right">
-            <h3>Numero Total de tuits:</h3>
+            <h3>Total de tuits: {{cant_tot_extraidos}}</h3>
         </div>
     </div>
-    <div class="card-block">
-        <h4>Tuits Positivos 475</h4>
-        <div class="col-6">
-            <h5>85</h5>
+    <div class="row">
+        <div class="col-sm-4">
+            <app-cantidadtwitter [cantidad]="cant_tot_positivos" [porcentaje]="cant_tot_positivos_porcentaje"
+                titulo="Postivos"></app-cantidadtwitter>
         </div>
-        <div class="col-6">
-            <h5>17%</h5>
+        <div class="col-sm-4">
+            <app-cantidadtwitter [cantidad]="cant_tot_negativos" [porcentaje]="cant_tot_negativos_porcentaje"
+                titulo="Negativos"></app-cantidadtwitter>
+        </div>
+        <div class="col-sm-4">
+            <app-cantidadtwitter [cantidad]="cant_tot_neutro" [porcentaje]="cant_tot_neutro_porcentaje"
+                titulo="Neutros"></app-cantidadtwitter>
         </div>
     </div>
 </div>
