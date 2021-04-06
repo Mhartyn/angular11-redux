@@ -8,7 +8,7 @@ import { AccionpopularComponent } from './accionpopular/accionpopular.component'
 const pagesRouters: Routes = [
     {path: 'home', component: HomeComponent, data: { titulo: 'Home' } },
     {path: 'accionpopular', component: AccionpopularComponent, data: { titulo: 'Accion Popular' }},
-    {path: 'graficas', component: GraficasComponent, data: { titulo: 'Estadisticas' }},
+    //{path: 'graficas', component: GraficasComponent, data: { titulo: 'Estadisticas' }},
     //{path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
     //{path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs' } },
     //{path: 'account-setting', component: AccountSettingComponent, data: { titulo: 'Ajustes de tema' } },

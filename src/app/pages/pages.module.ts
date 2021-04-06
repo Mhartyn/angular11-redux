@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from '@angular/common';
+import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts';
 
 import { PAGES_ROUTES } from './pages.routers';
 import { SharedModule } from '../shared/shared.module';
@@ -25,7 +27,7 @@ import { CantidadtwitterComponent } from '../componentes/cantidadtwitter/cantida
         GraficasComponent,
         HomeComponent,
         AccionpopularComponent,
-        CantidadtwitterComponent,
+        CantidadtwitterComponent
         //IncrementadorComponent,
         //GraficaDonaComponent,
         //AccountSettingComponent,
@@ -38,7 +40,7 @@ import { CantidadtwitterComponent } from '../componentes/cantidadtwitter/cantida
         //ProgressComponent,
         GraficasComponent,
         HomeComponent,
-        CantidadtwitterComponent,
+        CantidadtwitterComponent,        
         //IncrementadorComponent,
         //GraficaDonaComponent,
         //AccountSettingComponent,
@@ -52,7 +54,10 @@ import { CantidadtwitterComponent } from '../componentes/cantidadtwitter/cantida
         CommonModule,
         SharedModule,
         FormsModule,
-        PipeModule
+        PipeModule,
+        NgxEchartsModule.forRoot({
+            echarts,
+        }),
     ]
 })
 export class PagesModule {}
