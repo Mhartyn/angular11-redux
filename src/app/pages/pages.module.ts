@@ -3,51 +3,37 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import { NgxEchartsModule } from 'ngx-echarts';
 import * as echarts from 'echarts';
+import { TagCloudModule } from 'angular-tag-cloud-module';
 
 import { PAGES_ROUTES } from './pages.routers';
 import { SharedModule } from '../shared/shared.module';
 
 import { PipeModule } from '../pipes/pipe.module';
-//import { ProgressComponent } from './progress/progress.component';
-import { GraficasComponent } from './graficas/graficas.component';
+import { GraficasComponent } from '../componentes/graficas/graficas.component';
 import { HomeComponent } from './home/home.component';
 import { AccionpopularComponent } from './accionpopular/accionpopular.component';
 import { CantidadtwitterComponent } from '../componentes/cantidadtwitter/cantidadtwitter.component';
-//import { AccountSettingComponent } from './account-setting/account-setting.component';
-//import { GraficaDonaComponent } from '../component/grafica-dona/grafica-dona.component';
-//import { PromesasComponent } from './promesas/promesas.component';
-//import { RxjsComponent } from './rxjs/rxjs.component';
-//import { ProfileComponent } from './profile/profile.component';
-//import { IncrementadorComponent } from '../component/incrementador/incrementador.component';
-//import { UsuarioComponent } from './usuario/usuario.component';
+import { WordcloudComponent } from '../componentes/wordcloud/wordcloud.component';
+import { ToptweetsComponent } from '../componentes/toptweets/toptweets.component';
+import { PostComponent } from '../componentes/post/post.component';
 
 @NgModule({
     declarations: [
-        //ProgressComponent,
+        WordcloudComponent,
         GraficasComponent,
         HomeComponent,
         AccionpopularComponent,
-        CantidadtwitterComponent
-        //IncrementadorComponent,
-        //GraficaDonaComponent,
-        //AccountSettingComponent,
-        //PromesasComponent,
-        //RxjsComponent,
-        //ProfileComponent,
-        //UsuarioComponent
+        CantidadtwitterComponent,
+        ToptweetsComponent,
+        PostComponent
     ],
     exports: [
-        //ProgressComponent,
+        WordcloudComponent,
         GraficasComponent,
         HomeComponent,
-        CantidadtwitterComponent,        
-        //IncrementadorComponent,
-        //GraficaDonaComponent,
-        //AccountSettingComponent,
-        //PromesasComponent,
-        //RxjsComponent,
-        //ProfileComponent,
-        //UsuarioComponent
+        CantidadtwitterComponent,
+        ToptweetsComponent,
+        PostComponent
     ],
     imports: [
         PAGES_ROUTES,
@@ -58,6 +44,7 @@ import { CantidadtwitterComponent } from '../componentes/cantidadtwitter/cantida
         NgxEchartsModule.forRoot({
             echarts,
         }),
+        TagCloudModule
     ]
 })
-export class PagesModule {}
+export class PagesModule { }

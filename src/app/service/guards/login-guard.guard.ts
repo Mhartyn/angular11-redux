@@ -15,7 +15,6 @@ export class LoginGuard implements CanActivate {
       return true;
     }
     else{
-      console.log('no estaLogeado');
       this.router.navigate(["/login"]);      
       return false;
     }

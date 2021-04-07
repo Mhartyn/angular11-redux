@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">{{titulo}}</h3>
+        <table class="col-sm-12">            
+            <tbody>
+                <tr *ngFor="let post of posts">                    
+                    <td class="col-sm-1">
+                        {{ post.screen_name }}
+                    </td>
+                    <td class="col-sm-1">
+                        {{ post.full_text }}
+                    </td>
+                    <td class="col-sm-1">
+                        {{ post.favorite_count }}
+                        {{ post.created_at }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

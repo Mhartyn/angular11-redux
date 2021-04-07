@@ -22,20 +22,38 @@
 <div class="card">
     <div class="row">
         <div class="col-sm-5">
-            <div class="card">
-                <h4>Numero de Mensiones</h4>
-                <app-graficas></app-graficas>
+            <div class="card">                
+                <app-graficas titulo="Número de menciones" [fecha]="fechaMensiones" [valor]="valorMensiones"></app-graficas>
             </div>
         </div>
         <div class="col-sm-5">
             <div class="card">
-                <h4>Analisis de sentimiento</h4>
-                <app-graficas></app-graficas>
+                <app-graficas titulo="Analisis de sentimiento" [fecha]="fechaAS" [valor]="tweet"></app-graficas>
             </div>
         </div>
         <div class="col-sm-2">
             <div class="card">
-                <h1>Letras</h1>
+                <!--[cloudData]="cloudData"-->
+                <app-wordcloud ></app-wordcloud>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">                
+                <app-toptweets [tweets]="topTweet"></app-toptweets>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <app-post titulo="Menciones positivas populares" [posts]="postsPositivos"></app-post>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <app-post titulo="Menciones negativas populares" [posts]="postsNegativos"></app-post>
             </div>
         </div>
     </div>

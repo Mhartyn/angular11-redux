@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Top tuits por usuario</h3>
+        <table class="table table-hover">            
+            <tbody>
+                <tr *ngFor="let tweet of tweets">                    
+                    <td>
+                        {{ tweet._id }}
+                    </td>
+                    <td>
+                        {{ tweet.count }}
+                    </td>                                        
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { GraficasComponent } from './graficas/graficas.component';
+import { GraficasComponent } from '../componentes/graficas/graficas.component';
 import { HomeComponent } from './home/home.component';
 import { LoginGuard, AdminGuard } from 'src/app/service/service.index';
 import { AccionpopularComponent } from './accionpopular/accionpopular.component';
